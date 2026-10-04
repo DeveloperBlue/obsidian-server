@@ -24,4 +24,5 @@ services:
       - ${ROOT_DIR}/web-vaults:/vaults
       - ${ROOT_DIR}/web-data:/app/data
       - ${ROOT_DIR}/obsidian-app:/app/obsidian-app
+      - ./obsidian.ini:/opt/couchdb/etc/local.d/obsidian.ini
     restart: unless-stopped
