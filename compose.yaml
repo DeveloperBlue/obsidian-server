@@ -1,4 +1,5 @@
 services:
+  
   couchdb:
     image: couchdb:3.3
     container_name: obsidian_couchdb
