@@ -10,6 +10,7 @@ services:
       - "${COUCHDB_PORT}:5984"
     volumes:
       - ${ROOT_DIR}/couchdb/data:/opt/couchdb/data
+      - ./obsidian.ini:/opt/couchdb/etc/local.d/obsidian.ini
     restart: unless-stopped
 
   obsidian-web:
@@ -24,5 +25,4 @@ services:
       - ${ROOT_DIR}/web-vaults:/vaults
       - ${ROOT_DIR}/web-data:/app/data
       - ${ROOT_DIR}/obsidian-app:/app/obsidian-app
-      - ./obsidian.ini:/opt/couchdb/etc/local.d/obsidian.ini
     restart: unless-stopped
