@@ -26,4 +26,4 @@ services:
     restart: unless-stopped
 
 volumes:
-  obsidian-app:
+  obsidian-app: {}
