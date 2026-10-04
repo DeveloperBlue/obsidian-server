@@ -9,7 +9,7 @@ services:
     ports:
       - "${COUCHDB_PORT}:5984"
     volumes:
-      - ./data:/opt/couchdb/data
+      - ${ROOT_DIR}/couchdb/data:/opt/couchdb/data
     restart: unless-stopped
 
   obsidian-web:
@@ -21,10 +21,7 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
     volumes:
-      - ./web-vaults:/vaults
-      - ./web-data:/app/data
-      - obsidian-app:/app/obsidian-app
+      - ${ROOT_DIR}/web-vaults:/vaults
+      - ${ROOT_DIR}/web-data:/app/data
+      - ${ROOT_DIR}/obsidian-app:/app/obsidian-app
     restart: unless-stopped
-
-volumes:
-  obsidian-app: {}
